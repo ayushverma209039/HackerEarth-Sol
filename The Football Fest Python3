@@ -1,0 +1,16 @@
+t = int(input())
+
+for i in range(t):
+    N = [int(k) for k in input().split()]
+    back = N[1]
+    pas = N[1]
+    for j in range(N[0]):
+        s = input().split()
+        if s[0] == 'P':
+            back = pas
+            pas = int(s[1])
+        elif s[0] == 'B':
+            temp = back
+            back = pas
+            pas = temp
+    print('Player '+ str(pas))
